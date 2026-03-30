@@ -145,8 +145,8 @@ The API will be available at `http://localhost:3000`
 3. Install dependencies and start the dev server:
 
 ```bash
-   npm install
-   npm run dev
+   pnpm install
+   pnpm run dev
 ```
 
 The app will be available at `http://localhost:3000`
