@@ -155,15 +155,10 @@ The app will be available at `http://localhost:3000`
 
 ## 🐳 Running with Docker Compose
 
-1. In the root directory, create a `.env` file:
+```
+if you want to change env variables, update the `docker-compose.yaml` file before running the commands below.
 
-```env
-   JWT_SECRET=your_jwt_secret_here
-   DATABASE_HOST=db
-   DATABASE_PORT=5432
-   DATABASE_NAME=your_db_name
-   DATABASE_USER=your_db_user
-   DATABASE_PASSWORD=your_db_password
+
 ```
 
 2. Start all services:
