@@ -1,0 +1,17 @@
+
+
+frontend/*/.env
+db_data
+
+backend/*/bin
+backend/*/obj
+backend/*/logs
+
+# IDE - VSCode
+.vs/*
+
+
+# System Files
+.DS_Store
+Thumbs.db
+*.log

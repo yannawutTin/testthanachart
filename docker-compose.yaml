@@ -1,0 +1,30 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "4500:4500"
+    environment:
+      - ConnectionStrings__DefaultConnection=host=db;port=5432;Database=mydb;Username=postgres;Password=postgres!@12345
+    depends_on:
+      - db
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - NEXT_PUBLIC_API_URL=http://localhost:4500/api
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - backend
+  db:
+    image: postgres:17.2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres!@12345
+      POSTGRES_DB: mydb
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+      - ./createScript.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5436:5432"
